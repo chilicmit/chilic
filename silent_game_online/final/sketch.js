@@ -1,3 +1,18 @@
+///mqtt
+
+let broker = {
+    hostname: 'public.cloud.shiftr.io',
+    port: 443
+};
+let client;
+let creds = {
+    clientID: 'p5Client',
+    userName: 'public',
+    password: 'public'
+}
+let topic = 'skyline';
+
+////p5.js
 let div=15;
 let message="2,3,5,8,7,1,12,12,10,15,9,7,1,12,12,725"
 var n=0;
@@ -22,10 +37,24 @@ function m_sub() {
 
 function setup() {
   
+  ////mqtt
+  client = new Paho.MQTT.Client(broker.hostname, Number(broker.port), creds.clientID);
+  client.onConnectionLost = onConnectionLost;
+  client.onMessageArrived = onMessageArrived;
+  client.connect(
+         {
+            onSuccess: onConnect,       // callback function for when you connect
+            userName: creds.userName,   // username
+            password: creds.password,   // password
+            useSSL: true                // use SSL
+        }
+    );
+  
+ 
+  
+  ////skyline
   print(id)
-  
   createCanvas(500, 600);
-  
   rb = createButton("►");
   rb.position(400, 550);
   rb.size(70,50)
@@ -155,6 +184,7 @@ function wsr(seed) {
 
 //testing
 function modify_a() {
+  sendMqttMessage(1);
   use_resource();
   let newarray=level_array;
   o=int(newarray[n])
@@ -163,7 +193,8 @@ function modify_a() {
   //print(newarray)
   message=newarray.join(",")
 }
-function modify_s() {
+function modify_s(-1) {
+  sendMqttMessage();
   use_resource();
   let newarray=level_array;
   o=int(newarray[n])
@@ -193,11 +224,41 @@ function use_resource(){
 }
     
     
-    
-    
-    
-    //text("Congraduations!!!"," players online"].join(""), 10, 30);
-    
-    
+////mqtt
 
 
+function onConnect() {
+    localDiv.html('client is connected');
+    client.subscribe(topic);
+}
+    
+function onConnectionLost(response) {
+    if (response.errorCode !== 0) {
+        localDiv.html('onConnectionLost:' + response.errorMessage);
+    }
+}
+
+
+
+function onMessageArrived(message) {
+    remoteDiv.html('I got a message:' + message.payloadString);
+    message=message.payloadString;
+
+}
+
+
+function sendMqttMessage(modify) {
+    // if the client is connected to the MQTT broker:
+    if (client.isConnected()) {
+
+        let msg = [n,modify,id].join();
+        // start an MQTT message:
+        message = new Paho.MQTT.Message(msg);
+        // choose the destination topic:
+        message.destinationName = topic;
+        // send it:
+        client.send(message);
+        // print what you sent:
+        localDiv.html('I sent: ' + message.payloadString);
+    }
+}
