@@ -145,7 +145,7 @@ function draw() {
   rect(0,0,width*(1-(wait/100))*2,70)
   textSize(32);
   fill(0, 0, 0);
-  text("THE　SILENT SKYLINE: loading...", 10, 50);
+  text("THE SILENT SKYLINE: 　loading...", 10, 50);
   if(wait==30){
     id=int(Math.random()*1000000);
     print(id);
@@ -265,7 +265,7 @@ function onConnectionLost(response) {
 
 
 function onMessageArrived(message) {
-    remoteDiv.html('I got a message:' + message.payloadString);
+    remoteDiv.html('　' + message.payloadString);
     let temp_m=message.payloadString;
     let temp_m_a=temp_m.split(",");
     let temp_m_a_l=temp_m_a.length;
@@ -290,6 +290,6 @@ function sendMqttMessage(modify) {
         // send it:
         client.send(message);
         // print what you sent:
-        localDiv.html('I sent: ' + message.payloadString);
+        localDiv.html('　 ' + message.payloadString);
     }
 }
