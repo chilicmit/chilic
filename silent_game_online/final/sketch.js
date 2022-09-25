@@ -145,7 +145,7 @@ function draw() {
   rect(0,0,width*(1-(wait/100))*2,70)
   textSize(32);
   fill(0, 0, 0);
-  text("loading...", 10, 50);
+  text("THE　SILENT SKYLINE: loading...", 10, 50);
   if(wait==30){
     id=int(Math.random()*1000000);
     print(id);
@@ -234,7 +234,9 @@ function after_loading(){
   text("click ► or ◄ to point a place and", 10, 350);
   text("click [construct] or [tear down] to do something", 10, 400);
   text("notice!", 10, 500);
-  text("one resource per a half floor; an entire floor costs 2 resources ", 10, 550);
+  text("one resource for (build or tear down) a half floor ", 10, 550);
+  text("an entire floor costs 2 resources ", 10, 600);
+  text("The game will start soon ", 10, 700);
   sleep(220);
   
 }
