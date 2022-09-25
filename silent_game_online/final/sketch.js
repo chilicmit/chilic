@@ -226,7 +226,7 @@ function after_loading(){
   text("You may",10,300);
   text("click ► or ◄ to point a place and", 10, 350);
   text("click [construct] or [teardown] to do something", 10, 400);
-  sleep(0);
+  sleep(220);
   
 }
 function use_resource(){
