@@ -193,8 +193,8 @@ function modify_a() {
   //print(newarray)
   message=newarray.join(",")
 }
-function modify_s(-1) {
-  sendMqttMessage();
+function modify_s() {
+  sendMqttMessage(-1);
   use_resource();
   let newarray=level_array;
   o=int(newarray[n])
