@@ -132,7 +132,7 @@ function draw() {
   fill(0, 0, 0);
   rect(0,height-70,width,70);
   
-  textSize(32);
+  textSize(25);
   fill(0, 0, 0);
   text([level_array[15]," participants have played THE SILENT SKYLINE"].join(""), 10, 30);
   /////////////////////start cover function
