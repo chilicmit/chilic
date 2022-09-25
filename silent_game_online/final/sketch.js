@@ -228,7 +228,7 @@ function after_loading(){
   textSize(50);
   text("HOORAY!!!", 10, 150);
   textSize(20);
-  text(["you win ",resource,' resources to build the skyline'].join(""), 10, 200);
+  text(["You win ",resource,' resources to build the skyline'].join(""), 10, 200);
   text("To construct the building", 10, 250);
   text("you may",10,300);
   text("click ► or ◄ to point a place and", 10, 350);
@@ -236,7 +236,9 @@ function after_loading(){
   text("notice!", 10, 500);
   text("one resource for (build or tear down) a half floor ", 10, 550);
   text("an entire floor costs 2 resources ", 10, 600);
-  text("The game will start soon ", 10, 700);
+  text("you can help to finish these unfinished floors ", 10, 650);
+  text("or you can build on wherever you want ", 10, 700);
+  text("The game will start soon; enjoy~ ", 10, 800);
   sleep(220);
   
 }
