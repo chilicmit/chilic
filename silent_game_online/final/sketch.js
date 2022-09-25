@@ -166,6 +166,9 @@ function draw() {
     text("Resources exhausted", 15, 120);
     text("Thank you for your participating ^^", 15, 140);
     text("You may want to stay here the watch others' real-time moves", 15, 160);
+      
+    text("Developed by Chi-Li Cheng, Wang-Li Yi", 15, 250);
+    text("SMArchS in Computation", 15, 270);
   }
   textSize(50);
   fill(255, 255, 255);
