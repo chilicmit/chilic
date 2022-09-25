@@ -20,19 +20,24 @@ function setup() {
   createCanvas(500, 600);
   
   rb = createButton("►");
-  rb.position(450, 550);
+  rb.position(400, 550);
+  rb.size(70,50)
   rb.mousePressed(m_add);
   lb = createButton("◄");
   lb.position(25, 550);
+  lb.size(70,50)
   lb.mousePressed(m_sub);
   
   
   tb = createButton("Teardown");
-  tb.position(300, 550);
+  tb.position(125, 550);
+  tb.size(70,50)
   tb.mousePressed(modify_s);
   bb = createButton("Construct");
-  bb.position(150, 550);
+  bb.position(300, 550);
+  bb.size(70,50)
   bb.mousePressed(modify_a);
+  
   
 }
 
