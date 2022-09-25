@@ -15,7 +15,7 @@ let topic = 'skyline';
 
 ////p5.js
 let div=15;
-var message_in="2,3,5,8,7,1,12,12,10,15,9,7,1,12,12,725"
+var message_in="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
 var n=0;
 let layer_h=10;
 let th=0;
@@ -163,7 +163,7 @@ function draw() {
   if (resource_status<=0){
     resource_status=0;
     textSize(20);
-    text("Thank you for your participating ^^", 10, 70);
+    text("Thank you for your participating ^^", 10, 120);
   }
   textSize(50);
   fill(255, 255, 255);
@@ -191,7 +191,10 @@ function wsr(seed) {
 
 //testing
 function modify_a() {
-  sendMqttMessage(1);
+  if (resource_status>0) {
+    
+    sendMqttMessage(1);
+    }
   use_resource();
   let newarray=level_array;
   o=int(newarray[n])
@@ -201,7 +204,9 @@ function modify_a() {
   message=newarray.join(",")
 }
 function modify_s() {
-  sendMqttMessage(-1);
+  if (resource_status>0) {
+    sendMqttMessage(-1);
+    }
   use_resource();
   let newarray=level_array;
   o=int(newarray[n])
@@ -254,6 +259,7 @@ function onMessageArrived(message) {
     let temp_m_a=temp_m.split(",");
     let temp_m_a_l=temp_m.length;
     if (temp_m_a_l > 10) {
+    
     message_in=message.payloadString;
 }
     print(message);
