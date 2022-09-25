@@ -124,7 +124,7 @@ function draw() {
   
   //draw a triangle to indicate location to build
   noStroke();
-  fill(190, 190, 190);
+  fill(190, 130, 130);
   th=height-(level_array[n]*layer_h)-35-60;
   triangle((n*(width/div))+30,th, (n*(width/div))+((width/div)/2), th+20, (n*(width/div))+(width/div)-30, th);
   
