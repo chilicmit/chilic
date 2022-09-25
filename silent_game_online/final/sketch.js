@@ -163,7 +163,9 @@ function draw() {
   if (resource_status<=0){
     resource_status=0;
     textSize(20);
-    text("Thank you for your participating ^^", 10, 120);
+    text("Resources exhausted", 15, 120);
+    text("Thank you for your participating ^^", 15, 140);
+    text("You may want to stay here the watch others' real-time moves", 15, 160);
   }
   textSize(50);
   fill(255, 255, 255);
