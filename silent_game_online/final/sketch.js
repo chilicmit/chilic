@@ -1,5 +1,6 @@
 ///mqtt
-
+let localDiv;
+let remoteDiv;
 let broker = {
     hostname: 'public.cloud.shiftr.io',
     port: 443
@@ -14,7 +15,7 @@ let topic = 'skyline';
 
 ////p5.js
 let div=15;
-let message="2,3,5,8,7,1,12,12,10,15,9,7,1,12,12,725"
+var message_in="2,3,5,8,7,1,12,12,10,15,9,7,1,12,12,725"
 var n=0;
 let layer_h=10;
 let th=0;
@@ -38,6 +39,14 @@ function m_sub() {
 function setup() {
   
   ////mqtt
+    localDiv = createDiv('local messages will go here');
+    localDiv.position(20, 50);
+    localDiv.style('color', '#fff');
+    // create a div for the response:
+    remoteDiv = createDiv('waiting for messages');
+    remoteDiv.position(20, 80);
+    remoteDiv.style('color', '#fff');
+  
   client = new Paho.MQTT.Client(broker.hostname, Number(broker.port), creds.clientID);
   client.onConnectionLost = onConnectionLost;
   client.onMessageArrived = onMessageArrived;
@@ -78,7 +87,7 @@ function setup() {
   
 }
 
-let level_array= message.split(",");
+
 
 function sleep(delay) {
     var start = new Date().getTime();
@@ -88,11 +97,9 @@ wait=100
 
 
 function draw() {
-  level_array= message.split(",");
+  level_array= message_in.split(",");
   background(255,30);
   
-
-
   
   //drawing building
   for (let i=0;i<div;i++) {
@@ -214,7 +221,7 @@ function after_loading(){
   text("You may",10,300);
   text("click ► or ◄ to point a place and", 10, 350);
   text("click [construct] or [teardown] to do something", 10, 400);
-  sleep(500);
+  sleep(0);
   
 }
 function use_resource(){
@@ -234,6 +241,7 @@ function onConnect() {
     
 function onConnectionLost(response) {
     if (response.errorCode !== 0) {
+      print("no");
         localDiv.html('onConnectionLost:' + response.errorMessage);
     }
 }
@@ -242,7 +250,13 @@ function onConnectionLost(response) {
 
 function onMessageArrived(message) {
     remoteDiv.html('I got a message:' + message.payloadString);
-    message=message.payloadString;
+    let temp_m=message.payloadString;
+    let temp_m_a=temp_m.split(",");
+    let temp_m_a_l=temp_m.length;
+    if (temp_m_a_l > 10) {
+    message_in=message.payloadString;
+}
+    print(message);
 
 }
 
