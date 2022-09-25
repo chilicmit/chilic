@@ -39,11 +39,11 @@ function m_sub() {
 function setup() {
   
   ////mqtt
-    localDiv = createDiv('local messages will go here');
+    localDiv = createDiv(' ');
     localDiv.position(20, 50);
     localDiv.style('color', '#fff');
     // create a div for the response:
-    remoteDiv = createDiv('waiting for messages');
+    remoteDiv = createDiv(' ');
     remoteDiv.position(20, 80);
     remoteDiv.style('color', '#fff');
   
@@ -145,7 +145,7 @@ function draw() {
   rect(0,0,width*(1-(wait/100))*2,70)
   textSize(32);
   fill(0, 0, 0);
-  text("THE SILENT SKYLINE: 　loading...", 10, 50);
+  text("THE SILENT SKYLINE: LOADING...", 10, 50);
   if(wait==30){
     id=int(Math.random()*1000000);
     print(id);
@@ -225,10 +225,10 @@ function modify_s() {
 function after_loading(){
   //id=int(Math.random()*1000000);
   //print(id);
-  textSize(50);
-  text("HOORAY!!!", 10, 150);
+  textSize(30);
+  text("HOORAY!!! WELCOME TO THE SILENT SKYLINE!!", 10, 150);
   textSize(20);
-  text(["You win ",resource,' resources to build the skyline'].join(""), 10, 200);
+  text(["You win ",resource,' resources to change the skyline'].join(""), 10, 200);
   text("To construct the building", 10, 250);
   text("you may",10,300);
   text("click ► or ◄ to point a place and", 10, 350);
