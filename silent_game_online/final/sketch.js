@@ -191,9 +191,9 @@ function wsr(seed) {
 
 //testing
 function modify_a() {
-  if (resource_status>0) {
-    
+  if (resource_status>0 && wait<1) {
     sendMqttMessage(1);
+    sleep(100);
     }
   use_resource();
   let newarray=level_array;
@@ -204,8 +204,9 @@ function modify_a() {
   message=newarray.join(",")
 }
 function modify_s() {
-  if (resource_status>0) {
+  if (resource_status>0 && wait<1) {
     sendMqttMessage(-1);
+    sleep(100);
     }
   use_resource();
   let newarray=level_array;
@@ -219,13 +220,14 @@ function modify_s() {
 function after_loading(){
   //id=int(Math.random()*1000000);
   //print(id);
-  textSize(20);
+  textSize(50);
   text("Congraduations!!!", 10, 150);
-  text(["you win ",resource,' resources to modify the city'].join(""), 10, 200);
-  text("to construct the city", 10, 250);
-  text("You may",10,300);
+  textSize(20);
+  text(["you win ",resource,' resources to modify the skyline'].join(""), 10, 200);
+  text("To construct the building", 10, 250);
+  text("you may",10,300);
   text("click ► or ◄ to point a place and", 10, 350);
-  text("click [construct] or [teardown] to do something", 10, 400);
+  text("click [construct] or [tear down] to do something", 10, 400);
   sleep(220);
   
 }
@@ -257,7 +259,7 @@ function onMessageArrived(message) {
     remoteDiv.html('I got a message:' + message.payloadString);
     let temp_m=message.payloadString;
     let temp_m_a=temp_m.split(",");
-    let temp_m_a_l=temp_m.length;
+    let temp_m_a_l=temp_m_a.length;
     if (temp_m_a_l > 10) {
     
     message_in=message.payloadString;
