@@ -226,13 +226,15 @@ function after_loading(){
   //id=int(Math.random()*1000000);
   //print(id);
   textSize(50);
-  text("Congraduations!!!", 10, 150);
+  text("HOORAY!!!", 10, 150);
   textSize(20);
-  text(["you win ",resource,' resources to modify the skyline'].join(""), 10, 200);
+  text(["you win ",resource,' resources to build the skyline'].join(""), 10, 200);
   text("To construct the building", 10, 250);
   text("you may",10,300);
   text("click ► or ◄ to point a place and", 10, 350);
   text("click [construct] or [tear down] to do something", 10, 400);
+  text("notice!", 10, 500);
+  text("one resource per a half floor; an entire floor costs 2 resources ", 10, 550);
   sleep(220);
   
 }
