@@ -20,7 +20,7 @@ let topic = 'skyline';
 ////p5.js
 let div=15;
 var message_in="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
-var n=0;
+var n=random(15);
 let layer_h=10;
 let th=0;
 let ws=0;
