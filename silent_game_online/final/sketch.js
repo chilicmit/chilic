@@ -231,7 +231,7 @@ function after_loading(){
   //id=int(Math.random()*1000000);
   //print(id);
   textSize(30);
-  text("HOORAY!!! WELCOME TO THE SILENT SKYLINE!!", 10, 150);
+  text("HOORAY!!! WELCOME TO THE SILENT SKYLINE!!", 10, 110);
   textSize(20);
   text(["You win ",resource,' resources to change the skyline'].join(""), 10, 200);
   text("To construct the building", 10, 250);
@@ -244,7 +244,7 @@ function after_loading(){
   text("you can help to finish these unfinished floors ", 10, 650);
   text("or you can build on wherever you want ", 10, 700);
   text("The game will start in 5 seconds ", 10, 800);
-  image(img, width-400, height-270,400,200);
+  image(img, width-400, height-250,400,200);
   sleep(550);
   
   
