@@ -167,9 +167,9 @@ function draw() {
   if (resource_status<=0){
     resource_status=0;
     textSize(20);
-    text("Resources exhausted", 15, 120);
-    text("Thank you for participating the silent skyline ^^", 15, 140);
-    text("You may want to stay here to watch others' real-time actions", 15, 160);
+    text("Resources exhausted; you can actually refresh this page to play again", 15, 120);
+    text("Thank you for participating the silent skyline ^^", 15, 160);
+    text("BTW, you may stay here to watch others' real-time actions", 15, 140);
       
     text("Developed and by Chi-Li Cheng & Wang-Li Yi ", 15, 250);
     text("SMArchS in Computation ", 15, 270);
