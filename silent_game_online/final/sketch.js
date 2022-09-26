@@ -239,7 +239,7 @@ function after_loading(){
   text("you can help to finish these unfinished floors ", 10, 650);
   text("or you can build on wherever you want ", 10, 700);
   text("The game will start soon; enjoy~ ", 10, 800);
-  sleep(350);
+  sleep(550);
   
 }
 function use_resource(){
