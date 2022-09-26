@@ -1,4 +1,8 @@
 ///mqtt
+let img;
+function preload() {
+ img = loadImage('https://chilicmit.github.io/chilic/silent_game_online/final/beaver_decision.jpg');
+}
 let localDiv;
 let remoteDiv;
 let broker = {
@@ -223,6 +227,7 @@ function modify_s() {
 }
 
 function after_loading(){
+  
   //id=int(Math.random()*1000000);
   //print(id);
   textSize(30);
@@ -238,8 +243,10 @@ function after_loading(){
   text("an entire floor costs 2 resources ", 10, 600);
   text("you can help to finish these unfinished floors ", 10, 650);
   text("or you can build on wherever you want ", 10, 700);
-  text("The game will start soon; enjoy~ ", 10, 800);
+  text("The game will start in 5 seconds ", 10, 800);
+  image(img, width-400, height-270,400,200);
   sleep(550);
+  
   
 }
 function use_resource(){
