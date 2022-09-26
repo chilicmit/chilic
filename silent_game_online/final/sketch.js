@@ -138,7 +138,7 @@ function draw() {
   
   textSize(25);
   fill(0, 0, 0);
-  text([level_array[15]," participants have played THE SILENT SKYLINE"].join(""), 10, 30);
+  text(["THE SILENT SKYLINE is built by ",level_array[15]," people"].join(""), 10, 30);
   /////////////////////start cover function
   
   if (wait>1) {
@@ -171,8 +171,8 @@ function draw() {
     text("Thank you for participating the silent skyline ^^", 15, 140);
     text("You may want to stay here to watch others' real-time actions", 15, 160);
       
-    text("Developed by Chi-Li Cheng, Wang-Li Yi", 15, 250);
-    text("SMArchS in Computation", 15, 270);
+    text("Developed and by Chi-Li Cheng & Wang-Li Yi ", 15, 250);
+    text("SMArchS in Computation ", 15, 270);
   }
   textSize(50);
   fill(255, 255, 255);
