@@ -20,7 +20,9 @@ let topic = 'skyline';
 ////p5.js
 let div=15;
 var message_in="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
-let n=int(random(14));
+var n=0;
+
+
 let layer_h=10;
 let th=0;
 let ws=0;
@@ -41,6 +43,8 @@ function m_sub() {
 
 
 function setup() {
+  n=int(Math.random()*10);
+  print(n);
   
   ////mqtt
     localDiv = createDiv(' ');
@@ -99,7 +103,7 @@ function sleep(delay) {
 }
 wait=100
 
-
+n=random(14)
 function draw() {
   level_array= message_in.split(",");
   background(255,30);
@@ -153,7 +157,7 @@ function draw() {
   if(wait==30){
     id=int(Math.random()*1000000);
     print(id);
-    resource=int(Math.random()*5)+3;
+    resource=int(Math.random()*10)+3;
   }
   if(wait<30) {
     after_loading();
