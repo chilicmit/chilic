@@ -166,6 +166,7 @@ function draw() {
   }
   if (resource_status<=0){
     resource_status=0;
+    fill(155, 155, 155);
     textSize(20);
     text("Resources exhausted; you can actually refresh this page to play again", 15, 120);
     text("Thank you for participating the silent skyline ^^", 15, 160);
@@ -230,20 +231,21 @@ function after_loading(){
   
   //id=int(Math.random()*1000000);
   //print(id);
+  
   textSize(30);
   text("HOORAY!!! WELCOME TO THE SILENT SKYLINE!!", 10, 110);
   textSize(20);
   text(["You win ",resource,' resources to change the skyline'].join(""), 10, 200);
-  text("To construct the building", 10, 250);
-  text("you may",10,300);
-  text("click ► or ◄ to point a place and", 10, 350);
-  text("click [construct] or [tear down] to do something", 10, 400);
-  text("notice!", 10, 500);
-  text("one resource for (build or tear down) a half floor ", 10, 550);
-  text("an entire floor costs 2 resources ", 10, 600);
-  text("you can help to finish these unfinished floors ", 10, 650);
-  text("or you can build on wherever you want ", 10, 700);
-  text("The game will start in 5 seconds ", 10, 800);
+  text("To construct the building", 10, 240);
+  text("you may",10,280);
+  text("click ► or ◄ to point a place and", 10, 320);
+  text("click [construct] or [tear down] to do something", 10, 360);
+  text("notice!", 10, 460);
+  text("one resource for (build or tear down) a half floor ", 10, 500);
+  text("an entire floor costs 2 resources ", 10, 540);
+  text("you can help to finish these unfinished floors ", 10, 580);
+  text("or you can build on wherever you want ", 10, 620);
+  text("The game will start in 5 seconds ", 10, 660);
   image(img, width-400, height-250,400,200);
   sleep(550);
   
