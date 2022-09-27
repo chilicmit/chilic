@@ -250,7 +250,7 @@ function after_loading(){
   text("you can help to finish these unfinished floors ", 10, 580);
   text("or you can build on wherever you want ", 10, 620);
   text("The game will start in 5 seconds ", 10, 660);
-  image(img, width-400, height-250,400,200);
+  image(img, width-600, height-370,600,300);
   sleep(750);
   
   
