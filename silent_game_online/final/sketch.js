@@ -239,7 +239,7 @@ function after_loading(){
   textSize(30);
   text("HOORAY!!! WELCOME TO THE SILENT SKYLINE!!", 10, 110);
   textSize(20);
-  //text(["You win ",resource,' resources to change the skyline'].join(""), 10, 200);
+  text("Do whatever you want", 10, 200);
   text("Let’s design the city skyline together!", 10, 240);
   text("you may",10,280);
   text("click ► or ◄ to point a place and", 10, 320);
