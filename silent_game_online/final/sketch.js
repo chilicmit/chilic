@@ -142,7 +142,7 @@ function draw() {
   
   textSize(25);
   fill(0, 0, 0);
-  text(["THE SILENT SKYLINE IS BUILD by ",level_array[15]," PLAYERS"].join(""), 10, 30);
+  text(["THE SILENT SKYLINE IS BUILT by ",level_array[15]," PLAYERS"].join(""), 10, 30);
   /////////////////////start cover function
   
   if (wait>1) {
