@@ -252,7 +252,7 @@ function after_loading(){
   //text("or you can build on wherever you want ", 10, 620);
  // text("The game will start in 5 seconds ", 10, 660);
   image(img, width-600, height-370,600,300);
-  sleep(350);
+  sleep(100);
   
   
 }
