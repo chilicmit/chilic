@@ -157,7 +157,7 @@ function draw() {
   if(wait==30){
     id=int(Math.random()*1000000);
     print(id);
-    resource=int(Math.random()*15)+5;
+    resource=int(Math.random()*20)+10;
   }
   if(wait<30) {
     after_loading();
