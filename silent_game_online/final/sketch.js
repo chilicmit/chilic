@@ -239,17 +239,18 @@ function after_loading(){
   textSize(30);
   text("HOORAY!!! WELCOME TO THE SILENT SKYLINE!!", 10, 110);
   textSize(20);
-  text(["You win ",resource,' resources to change the skyline'].join(""), 10, 200);
-  text("To construct the building", 10, 240);
+  //text(["You win ",resource,' resources to change the skyline'].join(""), 10, 200);
+  text("Let’s design the city skyline together!", 10, 240);
   text("you may",10,280);
   text("click ► or ◄ to point a place and", 10, 320);
-  text("click [construct] or [tear down] to do something", 10, 360);
-  text("notice!", 10, 460);
-  text("one resource for (build or tear down) a half floor ", 10, 500);
-  text("an entire floor costs 2 resources ", 10, 540);
-  text("you can help to finish these unfinished floors ", 10, 580);
-  text("or you can build on wherever you want ", 10, 620);
-  text("The game will start in 5 seconds ", 10, 660);
+  text("click [construct] or [tear down] to increase or ", 10, 360);
+  text("decrease the height", 10, 400);
+  text("", 10, 460);
+  text(["Now you have", resource ,"resources to use, "], 10, 500);
+  text("Every [construction] or [tear down] action will cost 1. ", 10, 540);
+  //text("you can help to finish these unfinished floors ", 10, 580);
+  //text("or you can build on wherever you want ", 10, 620);
+ // text("The game will start in 5 seconds ", 10, 660);
   image(img, width-600, height-370,600,300);
   sleep(750);
   
@@ -280,7 +281,7 @@ function onConnectionLost(response) {
 
 
 function onMessageArrived(message) {
-    remoteDiv.html('　' + message.payloadString);
+    //remoteDiv.html('　' + message.payloadString);
     let temp_m=message.payloadString;
     let temp_m_a=temp_m.split(",");
     let temp_m_a_l=temp_m_a.length;
