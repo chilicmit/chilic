@@ -176,7 +176,7 @@ function draw() {
     text("Thank you for participating the silent skyline ^^", 15, 160);
     text("BTW, you may stay here to watch others' real-time actions", 15, 140);
       
-    text("Developed and by Chi-Li Cheng & Wang-Li Yi ", 15, 250);
+    text("Developed and by Chi-Li Cheng & Wangli Yi ", 15, 250);
     text("SMArchS in Computation ", 15, 270);
   }
   textSize(50);
